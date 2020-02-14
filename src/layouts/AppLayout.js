@@ -5,6 +5,7 @@ const AppLayout = (props) => (
     <div className='flex-item'></div>
 
     <div className='flex-item'>
+      <h1 className='text-center'>Moniez App</h1>
       {props.children}
     </div>
 
