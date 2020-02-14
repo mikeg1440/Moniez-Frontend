@@ -1,6 +1,5 @@
 import React from 'react';
-import './CSS/App.css';
-
+import {BroswerRouter as Router, Route, Link} from 'react-router-dom';
 function App() {
   return (
     <div className="App">
