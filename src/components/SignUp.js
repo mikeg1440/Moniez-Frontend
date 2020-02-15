@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import {registerUser} from '../actions/UserActions';
 
 
 const initialState = {
@@ -16,8 +17,6 @@ class SignUp extends Component {
   state = initialState
 
   handleChange = (e) => {
-    debugger
-    
     const { name, value } = e.target
     this.setState({
       [name]: value
@@ -66,7 +65,7 @@ class SignUp extends Component {
 
 const mapDispatchToProps = (dispatch, initialState) => {
   return {
-    signup: (userInfo) => dispatch({type: 'REGISTER_USER', payload: userInfo})
+    signup: (userInfo) => dispatch(registerUser(userInfo))
   }
 }
 
