@@ -1,20 +1,33 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+
+const initialState = {
+  username: '',
+  email: '',
+  password: '',
+  password_confirmation: ''
+}
+
+
 
 class SignUp extends Component {
 
-  state = {
-    username: '',
-    email: '',
-    password: '',
-    passwordConfirmation: ''
-  }
-
+  state = initialState
 
   handleChange = (e) => {
     debugger
+    
+    const { name, value } = e.target
     this.setState({
+      [name]: value
+    })
+  }
 
-      })
+  handleSubmit = (e) => {
+    e.preventDefault()
+    this.props.signup(this.state)
+    this.setState(initialState)
   }
 
 
@@ -27,18 +40,18 @@ class SignUp extends Component {
             <h2>New User Sign Up</h2>
           </div>
 
-          <form>
+          <form onSubmit={this.handleSubmit}>
             <label>Username:</label>
-            <input type='text' className='form-control text-center' onChange={this.handleChange} value={this.state.username} placeholder='Username' />
+            <input type='text' className='form-control text-center' name='username' onChange={this.handleChange} value={this.state.username} placeholder='Username' />
 
             <label>Email:</label>
-            <input type='email' className='form-control text-center' onChange={this.handleChange} value={this.state.email} placeholder='Email' />
+            <input type='email' className='form-control text-center' name='email' onChange={this.handleChange} value={this.state.email} placeholder='Email' />
 
             <label>Password:</label>
-            <input type='password' className='form-control text-center' onChange={this.handleChange} value={this.state.password} placeholder='Password' />
+            <input type='password' className='form-control text-center' name='password' onChange={this.handleChange} value={this.state.password} placeholder='Password' />
 
             <label>Confirm Password:</label>
-            <input type='password' className='form-control text-center' onChange={this.handleChange} value={this.state.passwordConfirmation} placeholder='Password Confirmation' />
+            <input type='password' className='form-control text-center' name='password_confirmation' onChange={this.handleChange} value={this.state.passwordConfirmation} placeholder='Password Confirmation' />
 
             <div className='text-center pt-5'>
               <input type='submit' value='Submit' />
@@ -49,7 +62,12 @@ class SignUp extends Component {
 
     );
   }
-
 }
 
-export default SignUp;
+const mapDispatchToProps = (dispatch, initialState) => {
+  return {
+    signup: (userInfo) => dispatch({type: 'REGISTER_USER', payload: userInfo})
+  }
+}
+
+export default connect(null, mapDispatchToProps)(SignUp);
