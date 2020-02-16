@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {registerUser} from '../actions/UserActions';
+import {Redirect} from 'react-router-dom';
+import AlertMessage from './AlertMessage';
 
 
 const initialState = {
@@ -29,14 +31,26 @@ class SignUp extends Component {
     this.setState(initialState)
   }
 
+  componentWillUnmount(){
+    this.props.clearErrors()
+  }
+
+
 
   render() {
-    return (
+
+    console.log(this.props)
+    return localStorage.getItem('token') ? (
+      <Redirect to='/dashboard' />
+    ) : (
       <div className='app-wrapper'>
         <div className='container p-5 form-group'>
 
           <div className='text-center'>
             <h2>New User Sign Up</h2>
+            {this.props.errors ? (
+              <AlertMessage errors={this.props.errors} />
+            ) : null}
           </div>
 
           <form onSubmit={this.handleSubmit}>
@@ -63,10 +77,18 @@ class SignUp extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch, initialState) => {
+const mapDispatchToProps = (dispatch, currentProps) => {
   return {
-    signup: (userInfo) => dispatch(registerUser(userInfo))
+    signup: (userInfo) => dispatch(registerUser(userInfo, currentProps)),
+    clearErrors: () => dispatch({type: 'CLEAR_ERRORS'})
   }
 }
 
-export default connect(null, mapDispatchToProps)(SignUp);
+const mapStateToProps = state => {
+  if (state.currentUser.errors){
+    return {errors: state.currentUser.errors}
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
