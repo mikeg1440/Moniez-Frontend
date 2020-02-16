@@ -1,16 +1,9 @@
 
-export default function manageBudget(state = {
-  earnings: [],
-  bills: [],
-  expenses: []
-}, action) {
+export default function manageBudget(state = { budgets: [] }, action) {
   switch(action.type){
-    case 'ADD_EARNING':
-      return state
-    // case 'ADD_BILL':
-    //   // add bill
-    // case 'ADD_EXPENSE':
-    //   // add expense
+    case 'SET_BUDGET':
+      debugger
+      return {...action.payload}
     default:
       return state
   }
