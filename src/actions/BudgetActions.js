@@ -8,14 +8,12 @@ export function getBudgets(){
     fetch('http://localhost:3000/api/v1/budgets', {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
         'bearer': authToken,
       }
     })
     .then(resp => resp.json())
     .then(console.log)
     .catch(console.log)
-  }
-
   }
 }
