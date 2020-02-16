@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DashboardNav from '../components/DashboardNav';
+import BudgetsContainer from './BudgetsContainer';
 
 class DashboardContainer extends Component {
 
@@ -12,6 +13,8 @@ class DashboardContainer extends Component {
         <div className='row mr-auto ml-auto'>
           <DashboardNav />
         </div>
+
+        <BudgetsContainer />
 
         <div className='row'>
           <div className='col'>
