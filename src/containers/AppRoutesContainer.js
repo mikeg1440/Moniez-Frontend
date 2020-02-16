@@ -5,6 +5,8 @@ import LoginOptions from '../components/LoginOptions';
 import SignUp from '../components/SignUp';
 import LogIn from '../components/LogIn';
 import DashboardContainer from './DashboardContainer'
+import PrivateRoute from '../components/PrivateRoute';
+import PublicRoute from '../components/PrivateRoute';
 
 const AppRoutesContainer = () => (
   <>
@@ -14,8 +16,9 @@ const AppRoutesContainer = () => (
     <Route exact path='/login' component={Login} />
     <Route exact path='/expenses' component={ExpensesContainer} />
     <Route exact path='/bills' component={BillsContainer} />
-    <Route exact path='/earnings' component={EarningsContainer} /> */}
     <Route exact path='/dashboard' component={DashboardContainer} />
+    <Route exact path='/earnings' component={EarningsContainer} /> */}
+    <PrivateRoute path='/dashboard' component={DashboardContainer} />
     <Route exact path='/sign-up' component={SignUp} />
     <Route exact path='/login' component={LogIn} />
     <Route exact path='/' component={LoginOptions} />
