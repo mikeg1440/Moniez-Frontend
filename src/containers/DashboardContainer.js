@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import DashboardNav from '../components/DashboardNav';
 import BudgetsContainer from './BudgetsContainer';
+import {connect} from 'react-redux';
 
 class DashboardContainer extends Component {
 
@@ -29,6 +30,11 @@ class DashboardContainer extends Component {
     );
   }
 
+const mapDispatchToProps = dispatch => {
+  // userIsAuthed: () => dispatch(isAuthed())
+  return {
+    getBudgets: () => dispatch(getBudgets())
+  }
 }
 
-export default DashboardContainer;
+export default connect(null, mapDispatchToProps)(DashboardContainer);
