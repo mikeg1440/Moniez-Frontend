@@ -52,7 +52,7 @@ export function isAuthed(){
     fetch('http://localhost:3000/api/v1/is-authed', {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
         'bearer': token,
       }
     })
