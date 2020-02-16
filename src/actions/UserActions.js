@@ -45,3 +45,19 @@ export function loginUser(userInfo, props){
     .catch(console.log)
   }
 }
+
+export function isAuthed(){
+  const token = localStorage.getItem('token')
+  return (dispatch) => {
+    fetch('http://localhost:3000/api/v1/is-authed', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+        'bearer': token,
+      }
+    })
+    .then(resp => resp.json())
+    .then(console.log)
+    .catch(console.log)
+  }
+}
