@@ -1,5 +1,5 @@
 
-export default function manageBudget(state = { budgets: [] }, action) {
+export default function manageBudgets(state = [], action) {
   switch(action.type){
     case 'SET_BUDGET':
       debugger

@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 import currentUser from './manageUsers';
-import budget from './manageBudget';
+import budgets from './manageBudgets';
 
 export default combineReducers({
   currentUser,
-  budget
+  budgets
 });
