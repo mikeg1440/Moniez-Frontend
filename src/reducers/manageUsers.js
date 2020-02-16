@@ -3,13 +3,19 @@ export default function manageUsers(state = {
   isLoggedIn: false
 }, action){
   switch(action.type){
-    case 'REGISTER_USER':
-      console.log(action.payload)
-      break
-    // case 'LOGIN_USER':
-    //   // send user login request here
-    // case 'LOGOUT_USER':
-    //   // send user logout request
+    case 'LOGIN_USER':
+      const {id, username, email, authentication_token} = action.payload
+      localStorage.setItem('token', authentication_token)
+      debugger
+      return {...state, isLoggedIn: true, id, username, email}
+    case 'LOGOUT_USER':
+      localStorage.removeItem('token')
+      return {isLoggedIn: false}
+    case 'USER_ERROR':
+      return {...state, errors: [action.payload.errors]}
+    case 'CLEAR_ERRORS':
+      const {oldErrors, ...stateWithoutErrors} = state
+      return {stateWithoutErrors}
     default:
       return state
   }
