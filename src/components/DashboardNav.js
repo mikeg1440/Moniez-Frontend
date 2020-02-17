@@ -12,6 +12,7 @@ class DashboardNav extends Component {
   render() {
     return (
       <div className='col'>
+        <NavLink to='/budgets' className='btn btn-success mr-5 float-left' >Budgets</NavLink>
         <NavLink to='/earnings' className='btn btn-info mr-5' >Earnings</NavLink>
         <NavLink to='/expenses' className='btn btn-info mr-5' >Expenses</NavLink>
         <NavLink to='/bills' className='btn btn-info' >Bills</NavLink>
