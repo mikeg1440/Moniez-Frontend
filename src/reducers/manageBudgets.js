@@ -1,12 +1,17 @@
 
-export default function manageBudgets(state = [], action) {
+export default function manageBudgets(state = {
+  all: [],
+  selected: {}
+}, action) {
   switch(action.type){
     case 'SET_BUDGETS':
-      debugger
-      return action.payload
+      return {...state, all: action.payload}
     case 'ADD_BUDGET':
       debugger
-      return state.concat(action.payload)
+      return {...state, all: state.concat(action.payload)}
+    case 'SELECT_BUDGET':
+      let selected = state.all.filter(budget => budget.id === parseInt(action.payload))[0]
+      return {...state, selected: selected}
     default:
       return state
   }
