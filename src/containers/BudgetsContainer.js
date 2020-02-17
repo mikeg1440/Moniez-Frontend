@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import BudgetForm from '../components/BudgetForm';
-import {addBudget} from '../actions/BudgetActions';
+import {addBudget, getBudgets} from '../actions/BudgetActions';
+import MainNav from '../components/MainNav';
+
+
 import Budget from '../components/Budget';
 
 const initialState = {
@@ -25,12 +28,18 @@ class BudgetsContainer extends Component {
   }
 
   renderBudgets = () => {
-    return this.props.budgets.map(budget => <Budget budget={budget} />)
+    return this.props.budgets.all.map(budget => <Budget budget={budget} />)
   }
+
+  componentDidMount(){
+    this.props.getBudgets()
+  }
+
 
   render() {
     return (
       <div>
+        <MainNav location={this.props.location} />
         <BudgetForm submitBudget={this.submitBudget} />
 
         <h2 className='text-center'>Budgets</h2>
@@ -52,6 +61,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
+    getBudgets: () => dispatch(getBudgets()),
     addBudget: (budgetInfo) => dispatch(addBudget(budgetInfo))
   }
 }
