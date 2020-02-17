@@ -5,8 +5,8 @@ const BudgetSelector = ({budgets, callback}) => {
 
   return (
     <div>
-      <select onChange={callback} className="mdb-select md-form" defaultValue='Select a Budget'>
-        {/* <option value="" disabled selected></option> */}
+      <select onChange={callback} className="mdb-select md-form">
+        <option value="" disabled selected hidden>Select a Budget</option>
         {budgets.all.map(budget => <option key={budget.id} value={budget.id}>{budget.title}</option>)}
       </select>
     </div>
