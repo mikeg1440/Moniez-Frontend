@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import DashboardNav from '../components/DashboardNav';
+import MainNav from '../components/MainNav';
 import BudgetsContainer from './BudgetsContainer';
 import {connect} from 'react-redux';
 import {getBudgets, selectBudget} from '../actions/BudgetActions';
@@ -27,9 +28,10 @@ class DashboardContainer extends Component {
       <div className='text-center'>
         <h2>Dashboard Container</h2>
 
-        <div className='row mr-auto ml-auto'>
-          <DashboardNav />
-        </div>
+
+         <MainNav>
+          { this.isBudgetSelected() ? <DashboardNav /> : null}
+        </MainNav>
 
         <BudgetSelector budgets={this.props.budgets} callback={this.onSelectChange}/>
         {/* {this.isBudgetSelected ? <BudgetSelector /> : 'Budget is selected'  } */}
