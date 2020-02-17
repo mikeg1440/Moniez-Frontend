@@ -1,12 +1,12 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import PageNotFound from '../components/PageNotFound';
 import LoginOptions from '../components/LoginOptions';
 import SignUp from '../components/SignUp';
 import LogIn from '../components/LogIn';
 import DashboardContainer from './DashboardContainer'
 import PrivateRoute from '../components/PrivateRoute';
-import PublicRoute from '../components/PrivateRoute';
+// import PublicRoute from '../components/PrivateRoute';
 
 const AppRoutesContainer = () => (
   <>
