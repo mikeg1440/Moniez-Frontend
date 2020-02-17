@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom'
 import dollarLogo from '../images/dollar-logo.png';
-// import SignUp from '../components/forms/SignUp';
 
 const LoginOptions = () => (
   <div className='container text-center p-5'>
