@@ -10,6 +10,14 @@ class DashboardContainer extends Component {
   // componentDidMount(){
   //   this.props.getBudgets()
   // }
+  isBudgetSelected = () => {
+    return !(Object.keys(this.props.currentBudget).length === 0)
+  }
+
+  onSelectChange = (e) => {
+    const budgetId = e.target.options[e.target.selectedIndex].value
+    this.props.selectBudget(budgetId)
+  }
 
   render() {
     return (
