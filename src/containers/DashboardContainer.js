@@ -29,7 +29,7 @@ class DashboardContainer extends Component {
         <h2>Dashboard Container</h2>
 
 
-         <MainNav>
+         <MainNav location={this.props.location}>
           { this.isBudgetSelected() ? <DashboardNav /> : null}
         </MainNav>
 

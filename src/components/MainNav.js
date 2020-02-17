@@ -7,6 +7,9 @@ class MainNav extends Component {
     alert('Loggin user out!')
   }
 
+  renderBackButton = () => (
+    <NavLink to='/dashboard' className='btn btn-info'>Dashboard</NavLink>
+  )
 
   render() {
     return (
@@ -15,6 +18,7 @@ class MainNav extends Component {
           <div className='col'>
             <NavLink to='/budgets' className='btn btn-success mr-5 float-left' >Budgets</NavLink>
             {this.props.children}
+            {this.props.location.pathname != '/dashboard' ? this.renderBackButton() : null}
             <button className='btn btn-warning float-right' onClick={this.handleLogout}>Logout</button>
           </div>
         </div>
