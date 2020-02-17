@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import DashboardNav from '../components/DashboardNav';
 import BudgetsContainer from './BudgetsContainer';
 import {connect} from 'react-redux';
-import {getBudgets} from '../actions/BudgetActions';
+import {getBudgets, selectBudget} from '../actions/BudgetActions';
 import BudgetSelector from '../components/BudgetSelector';
 
 class DashboardContainer extends Component {
 
-  // componentDidMount(){
-  //   this.props.getBudgets()
-  // }
+  componentDidMount(){
+    this.props.getBudgets()
+  }
+
   isBudgetSelected = () => {
     return !(Object.keys(this.props.currentBudget).length === 0)
   }
@@ -28,8 +29,6 @@ class DashboardContainer extends Component {
           <DashboardNav />
         </div>
 
-        {/* conditionally render budgets container depending if a budget exists or not */}
-        <BudgetsContainer />
         <BudgetSelector budgets={this.props.budgets} callback={this.onSelectChange}/>
         {/* {this.isBudgetSelected ? <BudgetSelector /> : 'Budget is selected'  } */}
 
@@ -51,7 +50,10 @@ class DashboardContainer extends Component {
 const mapDispatchToProps = dispatch => {
   // userIsAuthed: () => dispatch(isAuthed())
   return {
-    getBudgets: () => dispatch(getBudgets())
+    getBudgets: () => dispatch(getBudgets()),
+    selectBudget: (budgetId) => dispatch(selectBudget(budgetId))
+  }
+}
 
 const mapStateToProps = state => {
   return {
