@@ -40,7 +40,11 @@ const mapDispatchToProps = dispatch => {
   // userIsAuthed: () => dispatch(isAuthed())
   return {
     getBudgets: () => dispatch(getBudgets())
+
+const mapStateToProps = state => {
+  return {
+    budgets: state.budgets
   }
 }
 
-export default connect(null, mapDispatchToProps)(DashboardContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(DashboardContainer);
