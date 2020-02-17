@@ -1,28 +1,45 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
+import BudgetForm from '../components/BudgetForm';
+import {addBudget} from '../actions/BudgetActions';
+import Budget from '../components/Budget';
+
+const initialState = {
+  title: '',
+  description: ''
+}
 
 class BudgetsContainer extends Component {
 
+  state = initialState
+
+  handleChange = (e) => {
+    const {name, value} = e.target
+    this.setState({
+      [name]: value
+    })
+  }
+
+  submitBudget = (budgetInfo) => {
+    this.props.addBudget(budgetInfo)
+  }
+
   renderBudgets = () => {
-    for (const budget in this.state.budgets){
-      return (
-        <div class="card" style="width: 18rem;">
-          <div class="card-body">
-            <h5 class="card-title">{budget.title}</h5>
-            <p class="card-text">{budget.description}</p>
-            <div className='text-center'>
-              <h1>${budget.total}</h1>
-            </div>
-          </div>
-        </div>
-      )
-    }
+    return this.props.budgets.map(budget => <Budget budget={budget} />)
   }
 
   render() {
     return (
       <div>
-        {this.renderBudgets}
+        <BudgetForm submitBudget={this.submitBudget} />
+
+        <h2 className='text-center'>Budgets</h2>
+
+
+        <div className='row'>
+          {this.renderBudgets()}
+        </div>
+
       </div>
     );
   }
@@ -33,4 +50,10 @@ const mapStateToProps = state => {
   return {budgets: state.budgets}
 }
 
-export default connect(mapStateToProps)(BudgetsContainer);
+const mapDispatchToProps = dispatch => {
+  return {
+    addBudget: (budgetInfo) => dispatch(addBudget(budgetInfo))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(BudgetsContainer);
