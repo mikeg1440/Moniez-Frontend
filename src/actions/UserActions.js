@@ -47,6 +47,7 @@ export function loginUser(userInfo, props){
 }
 
 export function isAuthed(){
+  // this isn't going to work because we need todo headers = new Headers() then append token
   const token = localStorage.getItem('token')
   return (dispatch) => {
     fetch('http://localhost:3000/api/v1/is-authed', {
