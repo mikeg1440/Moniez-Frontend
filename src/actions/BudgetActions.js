@@ -42,3 +42,12 @@ export function addBudget(budgetInfo){
 export function selectBudget(budgetId){
   return ({type: 'SELECT_BUDGET', payload: budgetId})
 }
+
+export function getEarnings(){
+  return (dispatch) => {
+    fetch("http://localhost:3000/api/v1/earnings", getOptions())
+    .then(response => response.json())
+    .then(data => dispatch({type: 'SET_BUDGETS', payload: data}))
+    .catch(console.log);
+  }
+}
