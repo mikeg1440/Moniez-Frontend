@@ -3,6 +3,7 @@ import DashboardNav from '../components/DashboardNav';
 import BudgetsContainer from './BudgetsContainer';
 import {connect} from 'react-redux';
 import {getBudgets} from '../actions/BudgetActions';
+import BudgetSelector from '../components/BudgetSelector';
 
 class DashboardContainer extends Component {
 
@@ -21,6 +22,9 @@ class DashboardContainer extends Component {
 
         {/* conditionally render budgets container depending if a budget exists or not */}
         <BudgetsContainer />
+        <BudgetSelector budgets={this.props.budgets} callback={this.onSelectChange}/>
+        {/* {this.isBudgetSelected ? <BudgetSelector /> : 'Budget is selected'  } */}
+
 
         <div className='row'>
           <div className='col'>
