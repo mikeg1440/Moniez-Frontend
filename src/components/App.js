@@ -1,6 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Route, NavLink} from 'react-router-dom';
-import Nav from '../components/Nav';
+import {BrowserRouter as Router} from 'react-router-dom';
 import AppRoutesContainer from '../containers/AppRoutesContainer';
 
 
