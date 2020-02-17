@@ -12,6 +12,8 @@ export default function manageBudgets(state = {
     case 'SELECT_BUDGET':
       let selected = state.all.filter(budget => budget.id === parseInt(action.payload))[0]
       return {...state, selected: selected}
+    case 'SET_EARNINGS':
+      return {...state, selected.earnings = action.payload}
     default:
       return state
   }
