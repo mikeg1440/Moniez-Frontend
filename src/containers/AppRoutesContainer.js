@@ -7,6 +7,9 @@ import LogIn from '../components/LogIn';
 import DashboardContainer from './DashboardContainer'
 import PrivateRoute from '../components/PrivateRoute';
 import BudgetsContainer from './BudgetsContainer';
+import BillsContainer from '../containers/BillsContainer';
+import EarningsContainer from '../containers/EarningsContainer';
+import ExpensesContainer from '../containers/ExpensesContainer';
 // import PublicRoute from '../components/PrivateRoute';
 
 const AppRoutesContainer = () => (
@@ -18,7 +21,11 @@ const AppRoutesContainer = () => (
     <Route exact path='/expenses' component={ExpensesContainer} />
     <Route exact path='/bills' component={BillsContainer} />
     <Route exact path='/dashboard' component={DashboardContainer} />
-    <Route exact path='/earnings' component={EarningsContainer} /> */}
+    <Route exact  /> */}
+
+    <PrivateRoute path='/expenses' component={ExpensesContainer} />
+    <PrivateRoute path='/bills' component={BillsContainer} />
+    <PrivateRoute path='/earnings' component={EarningsContainer} />
     <PrivateRoute path='/budgets' component={BudgetsContainer} />
     <PrivateRoute path='/dashboard' component={DashboardContainer} />
     <Route exact path='/sign-up' component={SignUp} />
