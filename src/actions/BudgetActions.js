@@ -99,3 +99,12 @@ export function addExpense(expenseInfo){
   }
 }
 
+
+export function addBill(billInfo){
+  return (dispatch) => {
+    fetch("http://localhost:3000/api/v1/bills", postOptions({bill: billInfo}))
+    .then(response => response.json())
+    .then(data => dispatch({type: 'ADD_BILL', payload: data}))
+    .catch(console.log)
+  }
+}
