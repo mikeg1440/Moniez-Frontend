@@ -50,7 +50,8 @@ const mapDispatchToProps = dispatch => {
   return {
     getEarnings: () => dispatch(getEarnings()),
     addEarning: (earningInfo) => dispatch(addEarning(earningInfo)),
-    getCategories: () => dispatch(getEarningCategories())
+    getCategories: () => dispatch(getEarningCategories()),
+    getBudgetDetails: (id) => dispatch(getBudgetDetails(id))
   }
 }
 
