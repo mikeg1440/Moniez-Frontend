@@ -31,7 +31,7 @@ class BudgetForm extends Component {
 
           <div className='row mb-2 '>
             <div className='col'>
-              <label className='float-right'>Budet Title: </label>
+              <label className='float-right'>Budget Title: </label>
             </div>
 
             <div className='col-9'>
