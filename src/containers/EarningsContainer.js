@@ -11,23 +11,24 @@ const budgetId = () => parseInt(localStorage.getItem('current_budget_id'))
 class EarningsContainer extends Component {
 
   componentDidMount(){
-    this.props.getEarnings()
+    this.props.getBudgetDetails(budgetId())
     this.props.getCategories()
   }
 
   renderEarnings = () => {
-    return this.props.earnings.map(earning => <Earning earning={earning} />)
+    return this.props.earnings.map(earning => <Earning key={earning.id} earning={earning} />)
   }
 
   handleSubmit = (earningInfo) => {
-    // earningInfo.budget_id = this.props.budget.id
-    earningInfo.budget_id = localStorage.getItem('current_budget_id')
+    earningInfo.budget_id = budgetId()
     this.props.addEarning(earningInfo)
   }
 
   render() {
     return (
       <div>
+        <h2 className='text-center'>Earnings</h2>
+
         <MainNav location={this.props.location}  />
         <EarningForm callback={this.handleSubmit} categories={this.props.categories} />
         <ul>
