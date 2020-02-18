@@ -6,7 +6,6 @@ export default function manageUsers(state = {
     case 'LOGIN_USER':
       const {id, username, email, authentication_token} = action.payload
       localStorage.setItem('token', authentication_token)
-      debugger
       return {...state, isLoggedIn: true, id, username, email}
     case 'LOGOUT_USER':
       localStorage.removeItem('token')
