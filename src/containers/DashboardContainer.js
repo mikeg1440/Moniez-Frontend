@@ -6,6 +6,9 @@ import {getBudgets, selectBudget} from '../actions/BudgetActions';
 import BudgetSelector from '../components/BudgetSelector';
 import BudgetTable from '../components/BudgetTable';
 
+const budgetId = () => parseInt(localStorage.getItem('current_budget_id'))
+
+
 class DashboardContainer extends Component {
 
   componentDidMount(){
