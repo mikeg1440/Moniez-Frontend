@@ -70,3 +70,12 @@ export function addEarning(earningInfo){
     .catch(console.log)
   }
 }
+
+export function getCategories(){
+  return (dispatch) => {
+    fetch("http://localhost:3000/api/v1/categories", getOptions())
+    .then(response => response.json())
+    .then(data => dispatch({type: 'GET_CATEGORIES', payload: data}))
+    .catch(console.log);
+  }
+}
