@@ -63,7 +63,6 @@ export function getEarningCategories(){
 
 
 export function addEarning(earningInfo){
-  debugger
   return (dispatch) => {
     fetch("http://localhost:3000/api/v1/earnings", postOptions({earning: earningInfo}))
     .then(response => response.json())
