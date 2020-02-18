@@ -89,3 +89,13 @@ export function getBudgetDetails(budgetId){
   }
 
 }
+
+export function addExpense(expenseInfo){
+  return (dispatch) => {
+    fetch("http://localhost:3000/api/v1/expenses", postOptions({expense: expenseInfo}))
+    .then(response => response.json())
+    .then(data => dispatch({type: 'ADD_EXPENSE', payload: data}))
+    .catch(console.log)
+  }
+}
+
