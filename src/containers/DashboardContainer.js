@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import DashboardNav from '../components/DashboardNav';
 import MainNav from '../components/MainNav';
-import BudgetsContainer from './BudgetsContainer';
 import {connect} from 'react-redux';
 import {getBudgets, selectBudget} from '../actions/BudgetActions';
 import BudgetSelector from '../components/BudgetSelector';
