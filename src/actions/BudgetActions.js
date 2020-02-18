@@ -51,6 +51,14 @@ export function getEarnings(){
     .catch(console.log);
   }
 }
+// export function getReguest(category){
+//   return (dispatch) => {
+//     fetch(`http://localhost:3000/api/v1/${category}`, getOptions())
+//     .then(response => response.json())
+//     .then(data => dispatch({type: `SET_${category.toUpperCase}`, payload: data}))
+//     .catch(console.log);
+//   }
+// }
 
 export function getEarningCategories(){
   return (dispatch) => {
