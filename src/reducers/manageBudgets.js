@@ -10,7 +10,7 @@ export default function manageBudgets(state = {
     case 'SET_BUDGETS':
       return {...state, all: action.payload}
     case 'ADD_BUDGET':
-      return {...state, all: state.concat(action.payload)}
+      return {...state, all: [...state.all, action.payload]}
     case 'SELECT_BUDGET':
       let selected = state.all.filter(budget => budget.id === parseInt(action.payload))[0]
       localStorage.setItem('current_budget_id', selected.id)
