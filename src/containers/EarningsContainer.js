@@ -6,6 +6,8 @@ import Earning from '../components/Earning';
 import {getEarningCategories} from '../actions/BudgetActions';
 import MainNav from '../components/MainNav';
 
+const budgetId = () => parseInt(localStorage.getItem('current_budget_id'))
+
 class EarningsContainer extends Component {
 
   componentDidMount(){
