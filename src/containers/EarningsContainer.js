@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {getEarnings, addEarning} from '../actions/BudgetActions';
 import EarningForm from '../components/EarningForm';
 import Earning from '../components/Earning';
-import {getEarningCategories} from '../actions/BudgetActions';
+import {getEarningCategories, getBudgetDetails} from '../actions/BudgetActions';
 import MainNav from '../components/MainNav';
 
 const budgetId = () => parseInt(localStorage.getItem('current_budget_id'))
