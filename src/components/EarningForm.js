@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import {connect} from 'react-redux';
 
 
 
 const initialState = {
-  earning_category_id: 0,
+  earning_category_id: 1,
   amount: 0
 }
 
