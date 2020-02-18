@@ -41,9 +41,9 @@ class EarningsContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-  earnings: state.budgets.earnings,
-  budget: state.budgets.selected,
-  categories: state.categories.earnings
+    earnings: state.budgets.selected.earnings,
+    budget: state.budgets.selected,
+    categories: state.categories.earnings
 }}
 
 const mapDispatchToProps = dispatch => {
