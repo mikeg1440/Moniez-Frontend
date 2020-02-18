@@ -39,6 +39,8 @@ class BudgetsContainer extends Component {
   render() {
     return (
       <div>
+        <h2 className='text-center'>Budgets</h2>
+
         <MainNav location={this.props.location} />
         <BudgetForm submitBudget={this.submitBudget} />
 
