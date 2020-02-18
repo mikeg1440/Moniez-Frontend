@@ -21,8 +21,7 @@ class DashboardContainer extends Component {
 
 
 
-  onSelectChange = (e) => {
-    const budgetId = e.target.options[e.target.selectedIndex].value
+  onBudgetSelect = (budgetId) => {
     this.props.selectBudget(budgetId)
   }
 
