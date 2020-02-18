@@ -5,6 +5,7 @@ import BudgetsContainer from './BudgetsContainer';
 import {connect} from 'react-redux';
 import {getBudgets, selectBudget} from '../actions/BudgetActions';
 import BudgetSelector from '../components/BudgetSelector';
+import BudgetTable from '../components/BudgetTable';
 
 class DashboardContainer extends Component {
 
@@ -40,6 +41,7 @@ class DashboardContainer extends Component {
         <div className='row'>
           <div className='col'>
             Budget Entries
+            {this.props.budgets.all && <BudgetTable budgets={this.props.budgets.all} />}
           </div>
 
           <div className='col'>
