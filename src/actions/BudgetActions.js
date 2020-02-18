@@ -79,3 +79,13 @@ export function getCategories(){
     .catch(console.log);
   }
 }
+
+export function getBudgetDetails(budgetId){
+  return (dispatch) => {
+    fetch(`http://localhost:3000/api/v1/budgets/${budgetId}`, getOptions())
+    .then(response => response.json())
+    .then(data => dispatch({type: 'SET_BUDGET_DETAILS', payload: data}))
+    .catch(console.log);
+  }
+
+}
