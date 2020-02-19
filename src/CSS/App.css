@@ -82,6 +82,11 @@ svg {
     color: aliceblue;
 }
 
+.card{
+  width: 18rem;
+  margin-bottom: 3rem;
+  margin-left: 2rem;
+}
 
 .card-body{
   background-color: mediumseagreen;
