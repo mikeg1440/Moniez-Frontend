@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class BudgetEntries extends Component {
-  constructor(props){
-    super(props)
-  }
+class BudgetEntries extends PureComponent {
 
   render() {
+    const {budget} = this.props
     return (
       <tr>
-        <td> {this.props.budget.title} </td>
-  			<td> $ {this.props.budget.total}</td>
+        <td> {budget.title} </td>
+  			<td> $ {budget.total}</td>
       </tr>
     );
   }
