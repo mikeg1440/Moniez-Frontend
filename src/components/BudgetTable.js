@@ -5,7 +5,7 @@ const BudgetTable = ({budgets}) =>{
   return (
   <table className='text-center' style={{width: '100%'}}>
   	<tbody>
-      {budgets.map(budget => <BudgetEntries budget={budget} />)}
+      {budgets.map(budget => <BudgetEntries key={budget.id} budget={budget} />)}
   	</tbody>
   </table>
  )
