@@ -70,15 +70,6 @@ export function getEarningCategories(){
 }
 
 
-export function addEarning(earningInfo){
-  return (dispatch) => {
-    fetch("http://localhost:3000/api/v1/earnings", postOptions({earning: earningInfo}))
-    .then(response => response.json())
-    .then(data => dispatch({type: 'ADD_EARNING', payload: data}))
-    .catch(console.log)
-  }
-}
-
 export function getCategories(){
   return (dispatch) => {
     fetch("http://localhost:3000/api/v1/categories", getOptions())
@@ -98,21 +89,23 @@ export function getBudgetDetails(budgetId){
 
 }
 
-export function addExpense(expenseInfo){
+
+export function addEntry(category, info){
   return (dispatch) => {
-    fetch("http://localhost:3000/api/v1/expenses", postOptions({expense: expenseInfo}))
+    fetch(`http://localhost:3000/api/v1/${category}s`, postOptions({[`${category}`]: info}))
     .then(response => response.json())
-    .then(data => dispatch({type: 'ADD_EXPENSE', payload: data}))
+    .then(data => dispatch({type: `ADD_${category.toUpperCase()}`, payload: data}))
     .catch(console.log)
   }
 }
 
 
-export function addBill(billInfo){
+export function deleteEntry(category, id){
   return (dispatch) => {
-    fetch("http://localhost:3000/api/v1/bills", postOptions({bill: billInfo}))
+    fetch(`http://localhost:3000/api/v1/${category}s/${id}`, deleteOptions())
     .then(response => response.json())
-    .then(data => dispatch({type: 'ADD_BILL', payload: data}))
+    .then(data => dispatch({type: `DELETE_${category.toUpperCase()}`, payload: data}))
     .catch(console.log)
   }
+  // return {type: 'DELETE_EARNING', payload: earningId}
 }
