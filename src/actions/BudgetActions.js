@@ -7,7 +7,7 @@ export function getBudgets(){
     fetch("http://localhost:3000/api/v1/budgets", getOptions())
     .then(response => response.json())
     .then(data => {
-      dispatch({type: 'SET_BUDGETS', payload: data})
+      dispatch({type: 'GET_BUDGETS', payload: data})
       dispatch({type: 'SELECT_BUDGET', payload: localStorage.getItem('current_budget_id')})
     })
     .catch(console.log);

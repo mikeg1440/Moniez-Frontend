@@ -4,7 +4,7 @@ export default function manageBudgets(state = {
   selected: {},
 }, action) {
   switch(action.type){
-    case 'SET_BUDGETS':
+    case 'GET_BUDGETS':
       return {...state, all: action.payload}
     case 'ADD_BUDGET':
       return {...state, all: [...state.all, action.payload]}
