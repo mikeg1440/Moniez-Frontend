@@ -46,7 +46,7 @@ class SignUp extends Component {
       <div className='app-wrapper'>
         <div className='container p-5 form-group'>
 
-          <div className='text-center'>
+          <div className='mx-auto'>
             <h2>New User Sign Up</h2>
             {this.props.errors ? (
               <AlertMessage errors={this.props.errors} />
@@ -66,8 +66,8 @@ class SignUp extends Component {
             <label>Confirm Password:</label>
             <input type='password' className='form-control text-center' name='password_confirmation' onChange={this.handleChange} value={this.state.passwordConfirmation} placeholder='Password Confirmation' />
 
-            <div className='text-center pt-5'>
-              <input type='submit' value='Submit' />
+            <div className='mx-auto'>
+              <input type='submit' className='shadow btn btn-success' value='Create Account' />
             </div>
           </form>
         </div>
