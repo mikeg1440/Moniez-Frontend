@@ -5,48 +5,61 @@ import {connect} from 'react-redux';
 import {getBudgets, selectBudget} from '../actions/BudgetActions';
 import BudgetSelector from '../components/BudgetSelector';
 import BudgetTable from '../components/BudgetTable';
+import BudgetPieChart from '../components/BudgetPieChart';
 
 const budgetId = () => parseInt(localStorage.getItem('current_budget_id'))
 
 
 class DashboardContainer extends Component {
 
-  componentDidMount(){
+  componentWillMount(){
     this.props.getBudgets()
+    // this.props.selectBudget(localStorage.getItem('current_budget_id'))
   }
+
 
   isBudgetSelected = () => {
-    return (Object.keys(this.props.budgets.selected).length !== 0)
+    return !!budgetId()
   }
 
-
+  isCurrentBudgetSelected = (currentBudget) => {
+    if (!!currentBudget){
+      return (!!Object.keys(currentBudget).length)
+    }
+  }
 
   onBudgetSelect = (budgetId) => {
     this.props.selectBudget(budgetId)
   }
 
+
   render() {
     return (
       <div className='text-center'>
-        <h2>Dashboard Container</h2>
+        <h2>Dashboard</h2>
 
 
          <MainNav location={this.props.location}>
           { this.isBudgetSelected() ? <DashboardNav /> : null}
         </MainNav>
 
-        <BudgetSelector budgets={this.props.budgets} callback={this.onSelectChange}/>
-        {/* {this.isBudgetSelected ? <BudgetSelector /> : 'Budget is selected'  } */}
+        <BudgetSelector budgets={this.props.budgets} callback={this.onBudgetSelect}/>
 
 
         <div className='row'>
           <div className='col'>
-            Budget Entries
+            <h4>Budgets</h4>
             {this.props.budgets.all && <BudgetTable budgets={this.props.budgets.all} />}
           </div>
 
           <div className='col'>
-            Budget Graph
+            <h4>{this.props.budgets.selected.title} Graph</h4>
+            {this.isCurrentBudgetSelected(this.props.budgets.selected) ? <BudgetPieChart budget={this.props.budgets.selected}/> : (
+              <div>
+                Select a budget to see graph..
+              </div>
+            )}
+
           </div>
         </div>
       </div>
@@ -58,13 +71,16 @@ const mapDispatchToProps = dispatch => {
   // userIsAuthed: () => dispatch(isAuthed())
   return {
     getBudgets: () => dispatch(getBudgets()),
-    selectBudget: (budgetId) => dispatch(selectBudget(budgetId))
+    selectBudget: (id) => dispatch(selectBudget(id))
   }
 }
 
 const mapStateToProps = state => {
+
   return {
-    budgets: state.budgets
+    budgets: state.budgets,
+    currentBudget: state.budgets.selected
+    // currentBudget: state.budgets.all.filter(budget => budget.id === budgetId())[0]
   }
 }
 
