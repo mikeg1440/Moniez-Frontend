@@ -50,6 +50,47 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+svg {
+  width: 90%;
+}
+
+
+.main-container {
+  -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+  color: aliceblue;
+  background-color: #2c4d6d;
+  padding: 10px;
+  border: 2px soid black;
+  border-radius: 10px;
+  margin-top: 4rem;
+
+}
+
+.budget-selector {
+  padding: 5px;
+  margin: 5px;
+  background-color: darkturquoise;
+}
+
+.recharts-wrapper {
+  background-color: #2b2f31a8;
+  color: aliceblue;
+}
+.label-text {
+    color: aliceblue;
+}
+
+
+.card-body{
+  background-color: mediumseagreen;
+}
+
+.page-not-found {
+  padding: 3rem;
+}
+
 .flex-container {
     padding-top: 2rem;
     display: -ms-flexbox;
