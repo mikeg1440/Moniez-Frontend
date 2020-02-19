@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {loginUser} from '../actions/UserActions';
 import {Redirect} from 'react-router-dom';
 import AlertMessage from './AlertMessage';
+import { Link } from 'react-router-dom'
 
 
 
@@ -67,9 +68,14 @@ class LogIn extends Component {
             value={this.state.password} />
 
           <div className='text-center pt-5'>
-            <input type='submit' value='Submit' />
+            <input type='submit' className='btn btn-success' value='Login' />
           </div>
         </form>
+
+        <div className='text-center pt-10'>
+          Don't have a account yet? <Link to='/sign-up'>Create a New Account</Link>
+        </div>
+
       </div>
     );
   }
