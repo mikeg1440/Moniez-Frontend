@@ -4,7 +4,7 @@ const AppLayout = (props) => (
   <div className='flex-container'>
     <div className='flex-item'></div>
 
-    <div className='flex-item'>
+    <div className='flex-item main-container'>
       <h1 className='text-center'>Moniez App</h1>
       {props.children}
     </div>
