@@ -1,30 +1,15 @@
 
-const authToken = () => (localStorage.getItem('token'))
+import {requestHeaders, getOptions, postOptions, deleteOptions, authToken} from '../helpers/requestHelpers'
 
-const requestHeaders = () => {
-  let headers = new Headers()
-  headers.append("Content-Type", "application/json")
-  headers.append("bearer", authToken())
-  return headers
-}
-
-const getOptions = () => ({
-  method: 'GET',
-  headers: requestHeaders(),
-  redirect: 'follow'
-})
-
-const postOptions = (infoObject) => ({
-  method: 'POST',
-  headers: requestHeaders(),
-  body: JSON.stringify(infoObject),
-})
 
 export function getBudgets(){
   return (dispatch) => {
     fetch("http://localhost:3000/api/v1/budgets", getOptions())
     .then(response => response.json())
-    .then(data => dispatch({type: 'SET_BUDGETS', payload: data}))
+    .then(data => {
+      dispatch({type: 'SET_BUDGETS', payload: data})
+      dispatch({type: 'SELECT_BUDGET', payload: localStorage.getItem('current_budget_id')})
+    })
     .catch(console.log);
   }
 
