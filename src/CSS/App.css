@@ -15,9 +15,27 @@
 
 
 * {
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
   border-radius: 5px;
 }
+
+nav {
+  padding: 9px;
+  background-color: #25242496;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 10px;
+  padding: 5px 0;
+  text-align: center;
+  background-color: #18192173;
+}
+
+
 
 body {
   background: rgb(63,94,251);
