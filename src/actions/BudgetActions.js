@@ -15,14 +15,14 @@ export function getBudgets(){
 
 }
 
-export function addBudget(budgetInfo){
-  return (dispatch) => {
-    fetch("http://localhost:3000/api/v1/budgets", postOptions({budget: budgetInfo}))
-    .then(response => response.json())
-    .then(data => dispatch({type: 'ADD_BUDGET', payload: data}))
-    .catch(console.log)
-  }
-}
+// export function addBudget(budgetInfo){
+//   return (dispatch) => {
+//     fetch("http://localhost:3000/api/v1/budgets", postOptions({budget: budgetInfo}))
+//     .then(response => response.json())
+//     .then(data => dispatch({type: 'ADD_BUDGET', payload: data}))
+//     .catch(console.log)
+//   }
+// }
 
 export function selectBudget(budgetId){
   return ({type: 'SELECT_BUDGET', payload: budgetId})
