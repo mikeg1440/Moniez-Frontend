@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import BudgetForm from '../components/BudgetForm';
-import {addBudget, getBudgets} from '../actions/BudgetActions';
+import {addBudget, getBudgets, deleteEntry, addEntry} from '../actions/BudgetActions';
 import MainNav from '../components/MainNav';
 
 
@@ -28,7 +28,7 @@ class BudgetsContainer extends Component {
   }
 
   renderBudgets = () => {
-    return this.props.budgets.all.map(budget => <Budget budget={budget} />)
+    return this.props.budgets.all.map(budget => <Budget key={budget.id} budget={budget} deleteAction={this.props.deleteBudget} />)
   }
 
   componentDidMount(){
@@ -64,7 +64,9 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getBudgets: () => dispatch(getBudgets()),
-    addBudget: (budgetInfo) => dispatch(addBudget(budgetInfo))
+    // addBudget: (budgetInfo) => dispatch(addBudget(budgetInfo)),
+    addBudget: (budgetInfo) => dispatch(addEntry('budget', budgetInfo)),
+    deleteBudget: (id) => dispatch(deleteEntry('budget', id))
   }
 }
 

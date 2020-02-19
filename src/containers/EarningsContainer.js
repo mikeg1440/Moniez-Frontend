@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {getEarnings, addEarning} from '../actions/BudgetActions';
+// import {getEarnings} from '../actions/BudgetActions';
 import EarningForm from '../components/EarningForm';
 import Earning from '../components/Earning';
-import {getEarningCategories, getBudgetDetails} from '../actions/BudgetActions';
+import {getEarningCategories, getBudgetDetails, deleteEntry, addEntry, getEarnings} from '../actions/BudgetActions';
 import MainNav from '../components/MainNav';
 
 const budgetId = () => parseInt(localStorage.getItem('current_budget_id'))
@@ -16,7 +16,11 @@ class EarningsContainer extends Component {
   }
 
   renderEarnings = () => {
-    return this.props.earnings.map(earning => <Earning key={earning.id} earning={earning} />)
+    return this.props.earnings.map(earning => <Earning key={earning.id} earning={earning} deleteAction={this.handleDelete} />)
+  }
+
+  handleDelete = (earningId) => {
+    this.props.deleteEarning(earningId)
   }
 
   handleSubmit = (earningInfo) => {
@@ -50,7 +54,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getEarnings: () => dispatch(getEarnings()),
-    addEarning: (earningInfo) => dispatch(addEarning(earningInfo)),
+    addEarning: (earningInfo) => dispatch(addEntry('earning', earningInfo)),
+    deleteEarning: (id) => dispatch(deleteEntry('earning', id)),
     getCategories: () => dispatch(getEarningCategories()),
     getBudgetDetails: (id) => dispatch(getBudgetDetails(id))
   }

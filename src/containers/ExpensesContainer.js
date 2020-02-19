@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import ExpenseForm from '../components/ExpenseForm';
 import Expense from '../components/Expense';
-import {getCategories, getBudgetDetails, addExpense} from '../actions/BudgetActions';
+import {getCategories, getBudgetDetails, deleteEntry, addEntry} from '../actions/BudgetActions';
 import MainNav from '../components/MainNav';
 
 const budgetId = () => parseInt(localStorage.getItem('current_budget_id'))
@@ -17,7 +17,7 @@ class ExpensesContainer extends Component {
   }
 
   renderExpenses = () => {
-    return this.props.budget.expenses.map(expense => <Expense key={expense.id} expense={expense} />)
+    return this.props.budget.expenses.map(expense => <Expense key={expense.id} expense={expense} deleteAction={this.props.deleteExpense}/>)
   }
 
   handleSubmit = (expenseInfo) => {
@@ -54,7 +54,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     // getExpenses: () => dispatch(getExpenses()),
-    addExpense: (expenseInfo) => dispatch(addExpense(expenseInfo)),
+    addExpense: (expenseInfo) => dispatch(addEntry('expense', expenseInfo)),
+    deleteExpense: (id) => dispatch(deleteEntry('expense', id)),
     getBudgetDetails: (id) => dispatch(getBudgetDetails(id)),
     getCategories: () => dispatch(getCategories())
   }
