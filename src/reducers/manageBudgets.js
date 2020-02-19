@@ -2,15 +2,14 @@
 export default function manageBudgets(state = {
   all: [],
   selected: {},
-  earnings: [],
-  bills: [],
-  expenses: []
 }, action) {
   switch(action.type){
     case 'SET_BUDGETS':
       return {...state, all: action.payload}
     case 'ADD_BUDGET':
       return {...state, all: [...state.all, action.payload]}
+    case 'DELETE_BUDGET':
+      return {...state, all: [...state.all.filter(budget => budget.id !== action.payload.id)]}
     case 'SELECT_BUDGET':
       let selected = state.all.filter(budget => budget.id === parseInt(action.payload))[0]
       localStorage.setItem('current_budget_id', selected.id)
@@ -20,11 +19,17 @@ export default function manageBudgets(state = {
     case 'SET_EARNINGS':
       return {...state, earnings: action.payload}
     case 'ADD_EARNING':
-      return {...state, earnings:[ ...state.earnings, action.payload]}
+      return {...state, selected: {...state.selected, earnings:[ ...state.selected.earnings, action.payload]}}
+    case 'DELETE_EARNING':
+      return {...state, selected: {...state.selected, earnings: [...state.selected.earnings.filter(earning => earning.id !== action.payload.id)]}}
     case 'ADD_EXPENSE':
-      return {...state, selected: {expenses: [ ...state.selected.expenses, action.payload]}}
+      return {...state, selected: {...state.selected, expenses: [ ...state.selected.expenses, action.payload]}}
+    case 'DELETE_EXPENSE':
+      return {...state, selected: {...state.selected, expenses: [...state.selected.expenses.filter(expense => expense.id !== action.payload.id)]}}
     case 'ADD_BILL':
-      return {...state, selected: {bills: [ ...state.selected.bills, action.payload]}}
+      return {...state, selected: {...state.selected, bills: [ ...state.selected.bills, action.payload]}}
+    case 'DELETE_BILL':
+      return {...state, selected: {...state.selected, bills: [...state.selected.bills.filter(bill => bill.id !== action.payload.id)]}}
     default:
       return state
   }
