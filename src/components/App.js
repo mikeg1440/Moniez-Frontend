@@ -6,8 +6,6 @@ import AppRoutesContainer from '../containers/AppRoutesContainer';
 function App() {
   return (
     <Router className="App text-center">
-
-
       <AppRoutesContainer />
     </Router>
   );
