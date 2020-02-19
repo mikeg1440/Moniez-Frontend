@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 const initialState = {
   earning_category_id: 1,
-  amount: 0
+  amount: ''
 }
 
 class EarningForm extends Component {

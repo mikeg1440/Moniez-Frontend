@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const initialState = {
   bill_category_id: 1,
-  amount: 0
+  amount: ''
 }
 
 class BillForm extends Component {
