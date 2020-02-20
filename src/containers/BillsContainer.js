@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Form from '../components/Form';
-import Bill from '../components/Bill';
+import BudgetElement from '../components/BudgetElement';
 import {getCategories, getBudgetDetails, deleteEntry, addEntry} from '../actions/BudgetActions';
 import MainNav from '../components/MainNav';
 
@@ -16,7 +16,7 @@ class BillsContainer extends Component {
   }
 
   renderBills = () => {
-    return this.props.bills.map(bill => <Bill key={bill.id} bill={bill} deleteAction={this.props.deleteBill} />)
+    return this.props.bills.map(bill => <BudgetElement key={bill.id} element={bill} category={bill.bill_category} deleteAction={this.props.deleteBill} />)
   }
 
   handleSubmit = (billInfo) => {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Form from '../components/Form';
-import Earning from '../components/Earning';
+import BudgetElement from '../components/BudgetElement';
 import {getEarningCategories, getBudgetDetails, deleteEntry, addEntry, getEarnings} from '../actions/BudgetActions';
 import MainNav from '../components/MainNav';
 
@@ -15,7 +15,7 @@ class EarningsContainer extends Component {
   }
 
   renderEarnings = () => {
-    return this.props.earnings.map(earning => <Earning key={earning.id} earning={earning} deleteAction={this.handleDelete} />)
+    return this.props.earnings.map(earning => <BudgetElement key={earning.id} element={earning} category={earning.earning_category} deleteAction={this.handleDelete} />)
   }
 
   handleDelete = (earningId) => {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Form from '../components/Form';
-import Expense from '../components/Expense';
+import BudgetElement from '../components/BudgetElement';
 import {getCategories, getBudgetDetails, deleteEntry, addEntry} from '../actions/BudgetActions';
 import MainNav from '../components/MainNav';
 
@@ -17,7 +17,7 @@ class ExpensesContainer extends Component {
   }
 
   renderExpenses = () => {
-    return this.props.budget.expenses.map(expense => <Expense key={expense.id} expense={expense} deleteAction={this.props.deleteExpense}/>)
+    return this.props.budget.expenses.map(expense => <BudgetElement key={expense.id} element={expense} category={expense.expense_category} deleteAction={this.props.deleteExpense}/>)
   }
 
   handleSubmit = (expenseInfo) => {
