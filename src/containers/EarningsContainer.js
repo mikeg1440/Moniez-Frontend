@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-// import {getEarnings} from '../actions/BudgetActions';
-import EarningForm from '../components/EarningForm';
+import Form from '../components/Form';
 import Earning from '../components/Earning';
 import {getEarningCategories, getBudgetDetails, deleteEntry, addEntry, getEarnings} from '../actions/BudgetActions';
 import MainNav from '../components/MainNav';
@@ -34,7 +33,7 @@ class EarningsContainer extends Component {
         <h2 className='text-center'>Earnings</h2>
 
         <MainNav location={this.props.location}  />
-        <EarningForm callback={this.handleSubmit} categories={this.props.categories} />
+        <Form callback={this.handleSubmit} categories={this.props.categories} categoryName='earning' />
         <ul>
           {this.props.earnings && this.renderEarnings()}
         </ul>

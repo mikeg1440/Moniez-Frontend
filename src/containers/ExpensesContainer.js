@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import ExpenseForm from '../components/ExpenseForm';
+import Form from '../components/Form';
 import Expense from '../components/Expense';
 import {getCategories, getBudgetDetails, deleteEntry, addEntry} from '../actions/BudgetActions';
 import MainNav from '../components/MainNav';
+
 
 const budgetId = () => parseInt(localStorage.getItem('current_budget_id'))
 
@@ -11,7 +12,6 @@ class ExpensesContainer extends Component {
 
 
   componentDidMount(){
-    // this.props.getBudgetDetails(1)
     this.props.getBudgetDetails(budgetId())
     this.props.getCategories()
   }
@@ -34,7 +34,7 @@ class ExpensesContainer extends Component {
         <h2 className='text-center'>Expenses</h2>
 
         <MainNav location={this.props.location}  />
-        <ExpenseForm callback={this.handleSubmit} categories={this.props.categories} />
+        <Form callback={this.handleSubmit} categories={this.props.categories} categoryName='expense' />
         <ul>
           {this.props.budget.expenses && this.renderExpenses()}
         </ul>

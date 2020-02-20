@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import BillForm from '../components/BillForm';
+import Form from '../components/Form';
 import Bill from '../components/Bill';
 import {getCategories, getBudgetDetails, deleteEntry, addEntry} from '../actions/BudgetActions';
 import MainNav from '../components/MainNav';
@@ -30,7 +30,7 @@ class BillsContainer extends Component {
       <div>
         <h2 className='text-center'>Bills</h2>
         <MainNav location={this.props.location}  />
-        <BillForm callback={this.handleSubmit} categories={this.props.categories} />
+        <Form callback={this.handleSubmit} categories={this.props.categories} categoryName='bill' />
         <ul>
           {this.props.budget.bills && this.renderBills()}
         </ul>
