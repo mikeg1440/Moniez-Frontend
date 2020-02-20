@@ -43,7 +43,7 @@ class Form extends Component {
             </div>
 
             <div className='col-9'>
-              <select name='expense_category_id' onChange={this.handleChange}>
+              <select name={`${categoryName}_category_id`} onChange={this.handleChange}>
                 {this.props.categories.map(category => <option key={category.id} value={category.id}>{category.title}</option>)}
               </select>
 
