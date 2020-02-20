@@ -34,7 +34,7 @@ class BudgetForm extends Component {
               <label className='float-right'>Budget Title: </label>
             </div>
 
-            <div className='col-9'>
+            <div className='col-10'>
               <input
                 type='text'
                 name='title'
@@ -46,11 +46,11 @@ class BudgetForm extends Component {
             </div>
 
             <div className='row'>
-              <div className='col-3'>
+              <div className='col-2'>
                 <label className='float-right'>Budget Description: </label>
               </div>
 
-              <div className='col-9'>
+              <div className='col-10'>
                 <textarea
                   name='description'
                   className='form-control'
@@ -61,8 +61,8 @@ class BudgetForm extends Component {
               </div>
 
 
-              <div className='row mt-2'>
-                <div className='col'>
+              <div className='row mt-5'>
+                <div className='col text-center'>
                   <input type='submit' value='Create Budget' className='btn btn-primary' />
                 </div>
               </div>
