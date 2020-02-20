@@ -11,9 +11,8 @@ const LoginOptions = () => (
 
     <Link to='/sign-up' className='btn btn-primary mr-5'>Sign Up</Link>
 
-    <Link to='/login' className='btn btn-primary mr-5'>Login</Link>
+    <Link to='/login' className='btn btn-primary'>Login</Link>
 
-    {/* <Link to='/dashboard' className='btn btn-primary'>Dashboard</Link> */}
   </div>
 );
 
