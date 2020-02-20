@@ -1,68 +1,184 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `yarn start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+<!-- PROJECT SHIELDS -->
+<!--
+*** I'm using markdown "reference style" links for readability.
+*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
+*** See the bottom of this document for the declaration of the reference variables
+*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
+*** https://www.markdownguide.org/basic-syntax/#reference-style-links
+-->
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+[![MIT License][license-shield]][license-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/mikeg1440/Moniez">
+    <img src="https://github.com/mikeg1440/Moniez-Frontend/blob/master/src/images/moniez-green-logo.png" alt="Moniez Logo" width="80" height="80">
+  </a>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  <h3 align="center">Moniez</h3>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+  <p align="center">
+    A personal budgeting application with a Ruby on Rails API back end and a React.js front end
+    <br />
+    <a href="https://github.com/mikeg1440/Moniez">View Demo</a>
+    ·
+    <a href="https://github.com/mikeg1440/Moniez/issues">Report a Bug</a>
+    ·
+    <a href="https://github.com/mikeg1440/Moniez/issues">Request Feature</a>
+  </p>
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<!-- TABLE OF CONTENTS -->
+## Table of Contents
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* [About the Project](#about-the-project)
+  * [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [Usage](#usage)
+* [Roadmap](#roadmap)
+* [Contributing](#contributing)
+* [License](#license)
+* [Contact](#contact)
+* [Acknowledgements](#acknowledgements)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+<!-- ABOUT THE PROJECT -->
+## About The Project
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+[![Moniez Dashboard Screen Shot][product-screenshot]](https://github.com/mikeg1440/Moniez-Frontend/blob/master/src/images/dashboard-screenshot.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+### Built With
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+* [React.js](https://reactjs.org/)
+  * [Recharts](http://recharts.org/en-US/)
+  * [react-router-dom](https://www.npmjs.com/package/react-router-dom)
+* [Ruby on Rails](https://rubyonrails.org/)
+  * [Simple Token Authentication](https://github.com/gonzalo-bulnes/simple_token_authentication)
+  * [Active Model Serializers](https://github.com/rails-api/active_model_serializers)
 
-### Analyzing the Bundle Size
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+<!-- GETTING STARTED -->
+## Getting Started
 
-### Making a Progressive Web App
+To get a local copy up and running follow these simple steps.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+### Prerequisites
 
-### Advanced Configuration
+This is an example of how to list things you need to use the software and how to install them.
+* npm
+```sh
+npm install npm@latest -g
+```
+* [Ruby on Rails installed](https://www.tutorialspoint.com/ruby-on-rails/rails-installation.htm)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
 
-### Deployment
+### Installation
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+### Backend API
+1. Clone the https://github.com/mikeg1440/Moniez
+```sh
+git clone https://github.com/mikeg1440/Moniez.git
+```
+2. Change to the `Moniez-Backend` folder
+3. Run `bundle install` to install gems
+4. Run `rails db:setup` to create database and run migrations
+5. Finally to run the API server run `rails s`
 
-### `yarn build` fails to minify
+### Frontend Interface
+1. Change the `Moniez-Frontend` folder
+2. Install NPM packages `npm install`
+3. ##### `yarn start`
+  Runs the app in the development mode.<br />
+  Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+4. ##### `yarn build` to build the application (not needed for development)
+  Builds the app for production to the `build` folder.<br />
+  It correctly bundles React in production mode and optimizes the build for the best performance.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+<!-- USAGE EXAMPLES -->
+## Usage
+
+This can be useful for people looking to get an idea of where their money is going and how to best cut expenses so you can save as much as possible.  Users have the option of putting entering lists of Earnings, Expenses, and Bills that will then be calculated to show either how much money your left with to save or how much you r over spending by.  Each budget when selected is also rendered as a circle pie chart with each category displayed to get a better idea of how even or uneven your budget categories look.
+
+
+
+<!-- ROADMAP -->
+## Roadmap
+
+See the [open issues](https://github.com/mikeg1440/Moniez/issues) for a list of proposed features (and known issues).
+
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Contributions are what make the open source community such an amazing place to be learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+
+
+<!-- LICENSE -->
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+
+
+<!-- CONTACT -->
+## Contact
+
+Michael Gaudreau - [@MyLogicBytes1](https://twitter.com/MyLogicBytes1) - cyberct@kbox.li
+
+Project Link: [https://github.com/mikeg1440/Moniez](https://github.com/mikeg1440/Moniez)
+
+
+
+<!-- ACKNOWLEDGEMENTS -->
+<!-- ## Acknowledgements
+
+* []()
+* []()
+* []() -->
+
+
+
+
+
+<!-- MARKDOWN LINKS & IMAGES -->
+<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
+[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
+[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
+[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
+[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
+[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
+[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
+[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/in/othneildrew
+[product-screenshot]: https://github.com/mikeg1440/Moniez-Frontend/blob/master/src/images/dashboard-screenshot.png
