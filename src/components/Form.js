@@ -68,7 +68,7 @@ class Form extends Component {
 
           <div className='row mt-2'>
             <div className='col text-center'>
-              <input type='submit' value='Create Expense' className='btn btn-primary' />
+              <input type='submit' value={`Create ${this.capitalizeWord(categoryName)}`} className='btn btn-primary' />
             </div>
           </div>
 
