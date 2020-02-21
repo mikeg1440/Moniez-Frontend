@@ -10,12 +10,14 @@ class MainNav extends Component {
 
   handleLogout = () => {
     let logout = window.confirm('You are about to be logged out!')
-    logout && this.props.endUserSession()
-    localStorage.removeItem('token')
-    localStorage.removeItem('current_budget_id')
-    this.setState({
-      navigate: true
-    })
+    if (logout){
+      this.props.endUserSession()
+      localStorage.removeItem('token')
+      localStorage.removeItem('current_budget_id')
+      this.setState({
+        navigate: true
+      })
+    }
   }
 
   renderBackButton = () => (
