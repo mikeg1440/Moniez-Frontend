@@ -1,9 +1,10 @@
 import React from 'react';
 
-const AlertMessage = ({errors}) => (
+const AlertMessage = ({errors}) =>{
+  return (
   <div className='alert alert-danger'>
-    {errors.map(error => <h5>{error}</h5>)}
+    {errors[0].map((error, index) => <h4 key={index}>{error}</h4>)}
   </div>
-);
+);}
 
 export default AlertMessage;
