@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {registerUser} from '../actions/UserActions';
-import {Redirect} from 'react-router-dom';
+import {Redirect, Link} from 'react-router-dom';
 import AlertMessage from './AlertMessage';
 
 
@@ -46,8 +46,8 @@ class SignUp extends Component {
       <div className='app-wrapper'>
         <div className='container p-5 form-group'>
 
-          <div className='mx-auto'>
-            <h2>New User Sign Up</h2>
+          <div className='text-center'>
+            <h2>Create a New Account</h2>
             {this.props.errors ? (
               <AlertMessage errors={this.props.errors} />
             ) : null}
@@ -66,10 +66,14 @@ class SignUp extends Component {
             <label>Confirm Password:</label>
             <input type='password' className='form-control text-center' name='password_confirmation' onChange={this.handleChange} value={this.state.passwordConfirmation} placeholder='Password Confirmation' />
 
-            <div className='mx-auto'>
+            <div className='text-center mt-5'>
               <input type='submit' className='shadow btn btn-success' value='Create Account' />
             </div>
           </form>
+
+          <div className='text-center'>
+            Already have a account?  <Link to='/login'>Login Here</Link>
+          </div>
         </div>
       </div>
 
