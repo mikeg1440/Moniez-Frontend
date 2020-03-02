@@ -19,7 +19,12 @@ class DashboardContainer extends Component {
 
 
   isBudgetSelected = () => {
-    return !!budgetId()
+    if (this.props.budgets.all.length === 1){
+      localStorage.setItem('current_budget_id', this.props.budgets.all[0].id)
+      return true
+    }else {
+      return !!budgetId()
+    }
   }
 
   isCurrentBudgetSelected = (currentBudget) => {
