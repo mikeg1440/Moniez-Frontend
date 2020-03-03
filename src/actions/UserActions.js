@@ -63,11 +63,9 @@ export function loginUser(userInfo, props){
 export function endUserSession(){
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/logout`, deleteOptions())
-    // .then(response => response.json())
     .then(data => {
       dispatch({type: 'END_SESSION'})
     })
     .catch(console.log)
   }
-  debugger
 }
