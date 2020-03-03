@@ -42,7 +42,7 @@ class BillsContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-  bills: state.budgets.selected.bills,
+  bills: state.budgets.selected.bills ? state.budgets.selected.bills.sort((a,b) => b.amount - a.amount) : [],
   budget: state.budgets.selected,
   categories: state.categories.bills
 }}
