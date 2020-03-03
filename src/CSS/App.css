@@ -1,18 +1,3 @@
-.App {
-  text-align: center;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 
 * {
   /* border: 2px solid yellow; */
@@ -54,6 +39,28 @@ svg {
   width: 90%;
 }
 
+td {
+  font-size: 2rem;
+}
+
+/* Styling for whole app user interface */
+
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+/* Styling for main app container */
 
 .main-container {
   -webkit-box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
@@ -74,6 +81,8 @@ svg {
   background-color: darkturquoise;
 }
 
+/* Additional formatting for Recharts display (PieChart display) */
+
 .recharts-wrapper {
   background-color: #2b2f31a8;
   color: aliceblue;
@@ -82,6 +91,7 @@ svg {
     color: aliceblue;
 }
 
+/* Budget styling for display in BudgetsContainer */
 .card{
   width: 18rem;
   margin-bottom: 3rem;
@@ -92,9 +102,23 @@ svg {
   background-color: mediumseagreen;
 }
 
+/* Styling for Page Not Found component */
+
 .page-not-found {
   padding: 3rem;
 }
+
+/* CSS styling to show budgets in green if total > 0 else show in red */
+
+.inGreen {
+  color: #02dc02;
+}
+
+.inRed {
+  color: red;
+}
+
+/* Flex container styling for layout */
 
 .flex-container {
     padding-top: 2rem;
