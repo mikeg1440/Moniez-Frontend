@@ -7,7 +7,6 @@ export function registerUser(userInfo, props) {
     fetch('http://localhost:3000/api/v1/register', postOptions({user: userInfo}))
     .then(resp => resp.json())
     .then(data => {
-      console.log(data)
       if (Object.keys(data).includes('id')){
         dispatch({type: 'LOGIN_USER', payload: data})
         props.history.push('/dashboard')

@@ -39,7 +39,6 @@ class SignUp extends Component {
 
   render() {
 
-    console.log(this.props)
     return localStorage.getItem('token') ? (
       <Redirect to='/dashboard' />
     ) : (
