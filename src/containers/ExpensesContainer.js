@@ -46,7 +46,7 @@ class ExpensesContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-  expenses: state.budgets.selected.expenses ? state.budgets.selected.expenses.sort((a,b) => b.amount - a.amount) : [],
+  expenses: state.budgets.selected.expenses ? state.budgets.selected.expenses.sort((a,b) => b.amount - a.amount) : null,
   budget: state.budgets.selected,
   categories: state.categories.expenses
 }}
