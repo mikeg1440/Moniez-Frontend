@@ -2,7 +2,7 @@ import React from 'react';
 
 const Budget = ({budget, deleteAction}) => (
   <div className='col'>
-    <div className="card">
+    <div className="card mx-auto">
       <div className="card-body">
         <h5 className="card-title">{budget.title}</h5>
         <p className="card-text">{budget.description}</p>
