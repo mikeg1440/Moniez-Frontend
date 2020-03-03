@@ -1,5 +1,5 @@
 
-import {requestHeaders, getOptions, postOptions, deleteOptions, authToken} from '../helpers/requestHelpers'
+import { postOptions, deleteOptions } from '../helpers/requestHelpers'
 
 
 export function registerUser(userInfo, props) {
