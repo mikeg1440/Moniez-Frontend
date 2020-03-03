@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import BudgetForm from '../components/BudgetForm';
-import {addBudget, getBudgets, deleteEntry, addEntry} from '../actions/BudgetActions';
+import { getBudgets, deleteEntry, addEntry} from '../actions/BudgetActions';
 import MainNav from '../components/MainNav';
 
 
