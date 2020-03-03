@@ -64,7 +64,6 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     getBudgets: () => dispatch(getBudgets()),
-    // addBudget: (budgetInfo) => dispatch(addBudget(budgetInfo)),
     addBudget: (budgetInfo) => dispatch(addEntry('budget', budgetInfo)),
     deleteBudget: (id) => dispatch(deleteEntry('budget', id))
   }
