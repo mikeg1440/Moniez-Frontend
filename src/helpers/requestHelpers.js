@@ -1,5 +1,4 @@
 
-export {requestHeaders, getOptions, postOptions, deleteOptions, authToken}
 
 const authToken = () => (localStorage.getItem('token'))
 
@@ -27,3 +26,6 @@ const deleteOptions = (infoObject) => ({
   headers: requestHeaders(),
   body: JSON.stringify(infoObject),
 })
+
+
+export {requestHeaders, getOptions, postOptions, deleteOptions, authToken}
