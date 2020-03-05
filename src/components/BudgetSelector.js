@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-const currentBudgetId = () => (parseInt(localStorage.getItem('current_budget_id')))
+const currentBudgetId = () => (localStorage.getItem('current_budget_id') ? parseInt(localStorage.getItem('current_budget_id')) : null)
 
 class BudgetSelector extends Component {
   constructor(props){
@@ -28,7 +28,7 @@ class BudgetSelector extends Component {
     }
     return (
       <select onChange={this.handleChange} className="mdb-select md-form budget-selector" value={this.state.budgetId}>
-        {!currentBudgetId && <option value="" disabled selected hidden>Select a Budget</option> }
+        {currentBudgetId ? <option value="" disabled selected hidden>Select a Budget</option> : null}
         {budgets.all.map(budget => <option key={budget.id} value={budget.id}>{budget.title}</option>)}
       </select>
     );

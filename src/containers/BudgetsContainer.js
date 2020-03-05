@@ -28,6 +28,7 @@ class BudgetsContainer extends Component {
   }
 
   renderBudgets = () => {
+
     return this.props.budgets.all.map(budget => <Budget key={budget.id} budget={budget} deleteAction={this.props.deleteBudget} />)
   }
 

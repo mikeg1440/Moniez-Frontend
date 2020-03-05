@@ -61,10 +61,15 @@ export function getBudgetDetails(budgetId){
 
 export function addEntry(category, info){
   return (dispatch) => {
-    fetch(`http://localhost:3000/api/v1/${category}s`, postOptions({[`${category}`]: info}))
-    .then(response => response.json())
-    .then(data => dispatch({type: `ADD_${category.toUpperCase()}`, payload: data}))
-    .catch(console.log)
+    if (info.amount === ""){
+      dispatch({type: 'ADD_ERRORS', payload: 'Amount cannot be blank!'})
+    }else {
+      fetch(`http://localhost:3000/api/v1/${category}s`, postOptions({[`${category}`]: info}))
+      .then(response => response.json())
+      .then(data => dispatch({type: `ADD_${category.toUpperCase()}`, payload: data}))
+      .catch(console.log)
+
+    }
   }
 }
 
@@ -73,7 +78,19 @@ export function deleteEntry(category, id){
   return (dispatch) => {
     fetch(`http://localhost:3000/api/v1/${category}s/${id}`, deleteOptions())
     .then(response => response.json())
-    .then(data => dispatch({type: `DELETE_${category.toUpperCase()}`, payload: data}))
+    .then(data => {
+      if (data.id === parseInt(localStorage.getItem('current_budget_id'))) {
+        localStorage.removeItem('current_budget_id')
+      }
+      dispatch({type: `DELETE_${category.toUpperCase()}`, payload: data})
+    })
     .catch(console.log)
+  }
+}
+
+
+export function removeErrors(){
+  return (dispatch) => {
+    dispatch({type: 'REMOVE_ERRORS'})
   }
 }

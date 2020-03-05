@@ -2,6 +2,7 @@
 export default function manageBudgets(state = {
   all: [],
   selected: {},
+  errors: [],
 }, action) {
   switch(action.type){
     case 'GET_BUDGETS':
@@ -34,6 +35,11 @@ export default function manageBudgets(state = {
       return {...state, selected: {...state.selected, bills: [ ...state.selected.bills, action.payload]}}
     case 'DELETE_BILL':
       return {...state, selected: {...state.selected, bills: [...state.selected.bills.filter(bill => bill.id !== action.payload.id)]}}
+    case 'ADD_ERRORS':
+      return {...state, errors: [action.payload]}
+    case 'REMOVE_ERRORS':
+      const {errors, ...stateWithoutErrors} = state
+      return {stateWithoutErrors}
     default:
       return state
   }

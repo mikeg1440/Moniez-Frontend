@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 
 const initialState = {
   title: '',
-  description: ''
+  description: '',
+  error: null
 }
 
 class BudgetForm extends Component {
@@ -20,13 +21,24 @@ class BudgetForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault()
-    this.props.submitBudget(this.state)
-    this.setState(initialState)
+    if (this.state.title === ''){
+      this.setState({error: 'You must provide a budget title!'})
+    }else {
+      const {error, ...stateWithOutErrors} = this.state
+      // this.props.submitBudget(this.state)
+      this.props.submitBudget(stateWithOutErrors)
+      this.setState(initialState)
+    }
   }
 
   render() {
     return (
       <div className='container p-5' id='budgetForm'>
+
+        {this.state.error ? (
+          <h4 className='text-center alert-danger'>{this.state.error}</h4>
+        ) : null}
+
         <form onSubmit={this.handleSubmit}>
 
           <div className='row mb-2 '>

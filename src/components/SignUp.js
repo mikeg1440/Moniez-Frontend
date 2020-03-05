@@ -90,6 +90,8 @@ const mapDispatchToProps = (dispatch, currentProps) => {
 const mapStateToProps = state => {
   if (state.currentUser.errors){
     return {errors: state.currentUser.errors}
+  }else {
+    return {}
   }
 }
 
