@@ -9,7 +9,11 @@ export default function manageBudgets(state = {
     case 'ADD_BUDGET':
       return {...state, all: [...state.all, action.payload]}
     case 'DELETE_BUDGET':
-      return {...state, all: [...state.all.filter(budget => budget.id !== action.payload.id)]}
+      if (parseInt(localStorage.getItem('current_budget_id')) === action.payload.id){
+        return {...state, selected: {}, all: [...state.all.filter(budget => budget.id !== action.payload.id)]}
+      }else {
+        return {...state, all: [...state.all.filter(budget => budget.id !== action.payload.id)]}
+      }
     case 'SELECT_BUDGET':
       let selected = state.all.filter(budget => budget.id === parseInt(action.payload))[0]
       localStorage.setItem('current_budget_id', selected.id)
