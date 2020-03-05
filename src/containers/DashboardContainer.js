@@ -7,15 +7,21 @@ import BudgetSelector from '../components/BudgetSelector';
 import BudgetTable from '../components/BudgetTable';
 import BudgetPieChart from '../components/BudgetPieChart';
 
-const budgetId = () => parseInt(localStorage.getItem('current_budget_id'))
+const budgetId = () => {
+  return localStorage.getItem('current_budget_id') ? parseInt(localStorage.getItem('current_budget_id')) : null
+}
 
 
 class DashboardContainer extends Component {
 
-  componentWillMount(){
+  componentDidMount(){
     this.props.getBudgets()
     // this.props.selectBudget(localStorage.getItem('current_budget_id'))
   }
+  // componentWillMount(){
+  //   this.props.getBudgets()
+  //   // this.props.selectBudget(localStorage.getItem('current_budget_id'))
+  // }
 
 
   isBudgetSelected = () => {
