@@ -8,7 +8,13 @@ export default function manageUsers(state = {
       localStorage.setItem('token', authentication_token)
       return {...state, isLoggedIn: true, id, username, email}
     case 'USER_ERROR':
-      return {...state, errors: [action.payload.errors]}
+      let errors = []
+      if (!Array.isArray(action.payload.errors)){
+        errors.push(action.payload.errors)
+      }else {
+        errors = action.payload.errors;
+      }
+      return {...state, errors: errors}
     case 'CLEAR_ERRORS':
       const {oldErrors, ...stateWithoutErrors} = state
       return {stateWithoutErrors}
