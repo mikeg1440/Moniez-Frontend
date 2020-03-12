@@ -29,19 +29,6 @@ class BillsContainer extends Component {
     this.props.addBill(billInfo)
   }
 
-  // componentWillUnmount(){
-  //   this.props.removeErrors()
-  // }
-  //
-  // componentWillUpdate(nextProps, nextState){
-  //   debugger
-  //   this.props.removeErrors()
-  // }
-  //
-  // componentWillReceiveProps(nextProps){
-  //   debugger
-  // }
-
   render() {
     return (
       <div>
