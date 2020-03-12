@@ -58,6 +58,7 @@ class Form extends Component {
             <div className='col-9'>
               <input
                 name='amount'
+                required
                 className='form-control'
                 value={this.state.amount}
                 onChange={this.handleChange}
