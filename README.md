@@ -169,16 +169,16 @@ Project Link: [https://github.com/mikeg1440/Moniez](https://github.com/mikeg1440
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=flat-square
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=flat-square
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=flat-square
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=flat-square
-[issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=flat-square
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/mikeg1440/Moniez-Frontend.svg?style=flat-square
+[contributors-url]: https://github.com/mikeg1440/Moniez-Frontend/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/mikeg1440/Moniez-Frontend.svg?style=flat-square
+[forks-url]: https://github.com/mikeg1440/Moniez-Frontend/network/members
+[stars-shield]: https://img.shields.io/github/stars/mikeg1440/Moniez-Frontend.svg?style=flat-square
+[stars-url]: https://github.com/mikeg1440/Moniez-Frontend/stargazers
+[issues-shield]: https://img.shields.io/github/issues/mikeg1440/Moniez-Frontend.svg?style=flat-square
+[issues-url]: https://github.com/mikeg1440/Moniez-Frontend/issues
+[license-shield]: https://img.shields.io/github/license/mikeg1440/Moniez.svg?style=flat-square
+[license-url]: https://github.com/mikeg1440/Moniez/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/othneildrew
 [product-screenshot]: https://github.com/mikeg1440/Moniez-Frontend/blob/master/src/images/dashboard-screenshot.png
